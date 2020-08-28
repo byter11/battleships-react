@@ -16,13 +16,13 @@ class Game extends React.Component{
 				<Board 
 				id="my-board" 
 				className="board"
-				onDrop = {this.onDrop}
+				onClick = {this.onDrop}
 				/>
 
 				<Board 
 				id="enemy-board" 
 				className="board"
-				handleAttack = {this.handleAttack}
+				onClick = {this.handleAttack}
 				/>
 			</div>
 		);
