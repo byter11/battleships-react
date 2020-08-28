@@ -1,29 +1,7 @@
 import React, {useState} from 'react';
 import Ship from './Ship.js';
-function Board(props){
-  
-  const getshipIndexes = () => {
-    console.log('getship');
-    let shipIndexes = [];
-    const shipSizes = [1,3,3,4,5];
-    for(let i=0; i<5; i++){
-      const index = Math.floor( Math.random() * 100);
-      const isVertical = Math.random() > 0.5;
-      const coord = isVertical ? index/10 : index%10;
-      const isReverse = coord + shipSizes[i] > 11;
-      const multiplier = isVertical ? isReverse ? (-10) : 10 : isReverse? -1 : 1
-      const indexes = Array.from(Array(shipSizes[i]).fill().map( (_,i) => index+(i*multiplier)));
-      console.log(i+ ' ' + index + ' ' + indexes)
-      if(indexes.some( i => shipIndexes.includes(i)) ){
-        i--;
-        console.log(shipIndexes + ' includes ' + indexes);
-        continue;
-      }
-      shipIndexes.push(...indexes);
-    }
-    console.log('final ' + shipIndexes)
-    return shipIndexes;
-  }
+
+function Board(props){  
   
   
   const getTiles = (ships) =>{
